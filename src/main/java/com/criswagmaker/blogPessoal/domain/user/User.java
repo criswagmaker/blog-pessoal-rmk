@@ -16,20 +16,26 @@ import lombok.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    private String name;
 
-    @NotNull(message = "O atributo Usuário é Obrigatório!")
-    @Email(message = "O atributo Usuário deve ser um email válido!")
-    private String usuario;
+    @NotNull(message = "O atributo Email é Obrigatório!")
+    @Email(message = "O atributo Email deve ser um email válido!")
+    private String email;
 
     @NotNull
-    private String senha;
+    private String password;
 
     @Size (max = 5000)
-    private String foto;
+    private String photo;
 
-    private String tipo;
+    private String type;
+
+    public User(RequestUser requestUser){
+        this.name = requestUser.name();
+        this.email = requestUser.email();
+        this.password = requestUser.password();
+    }
 }
