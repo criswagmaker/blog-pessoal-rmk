@@ -1,7 +1,8 @@
 CREATE TABLE user (
-    id BIGINT PRIMARY KEY UNIQUE NOT NULL,
-	nome varchar(255) NOT NULL,
-    senha varchar(255)  NOT NULL,
-	foto varchar(500),
-	tipo varchar(255)
+    id BIGINT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255)  NOT NULL,
+	photo varchar(500),
+	type varchar(255)
 );
